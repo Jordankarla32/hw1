@@ -121,18 +121,13 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
+
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
+
 
 
 -- The SQL statement for the cast output
@@ -146,28 +141,28 @@ DROP TABLE IF EXISTS studios;
 -- Create new tables
 CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL
+    name TEXT 
 );
 
 CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    year_released INTEGER NOT NULL,
-    mpaa_rating TEXT NOT NULL,
+    title TEXT ,
+    year_released INTEGER ,
+    mpaa_rating TEXT ,
     studio_id INTEGER,
     FOREIGN KEY (studio_id) REFERENCES studios(id)
 );
 
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL
+    name TEXT 
 );
 
 CREATE TABLE roles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_id INTEGER,
     actor_id INTEGER,
-    character_name TEXT NOT NULL,
+    character_name TEXT ,
     FOREIGN KEY (movie_id) REFERENCES movies(id),
     FOREIGN KEY (actor_id) REFERENCES actors(id)
 );
